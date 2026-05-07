@@ -1,0 +1,46 @@
+## Problem ##
+Situation
+    User need an allocation interface for a company with a large number of customer orders. Each customer places one or more orders requesting a certain quantity of salmon from multiple suppliers and multiple warehouses. 
+However, total supply is limited. Your task is to design an interactive interface to help fairly allocate salmon to orders, based on defined rules.
+
+Feature
+    1. Manual Allocation Logic
+        - Users can manually assign salmon to each order.
+        - The following constraints must be enforced:
+            - Total allocated quantity must not exceed the remaining stock.
+            - A customer must not receive more than their available detail orders.
+    2. Auto-Assignment (Automatic Allocation Rules)
+        - Required logic:
+            - Respect FIFO (First-In-First-Out) based on:
+                - shipment date
+                - order creation date
+        - Priority rules:
+            - Prioritize specific order types as defined by business rules.
+            - High-priority types get allocation preference over non-critical orders.
+            - Apply rounding to decimal pieces during balance distribution.
+            - Apply the cheapest price per unit based on the supplier where the order was created, with pricing adjusted according to the special order type.
+            - Warehouse D (WH-0000) and Supplier D (SP-0000) indicate that allocation can be made from any available warehouse or supplier.
+    3. Usability / UI Constraints
+        - User can assign more than 5,000 orders.
+        - Finding the orders that users want to manually allocate.
+
+Engineer
+    As Engineer (FE)
+        - Solution Format
+        - GitHub Repo
+        - React
+        - Typescript
+        - UI Library is allowed
+        - Tailwind for all CSS
+    Criteria
+        - Performance / Algorithm
+        - Ease of use
+        - Initiative
+        - Design (Bonus)
+
+Example Data
+Order
+Order ID | Sales Order | Item ID | Warehouse ID | Supplier ID | Shipment | Type | Create Date | Customer ID | Remark
+
+Price
+Item ID | Supplier ID | Price | Order | Type | %
